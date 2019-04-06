@@ -25,7 +25,7 @@ export class AuthService {
   }
 
   get appUser$(): Observable <AppUser> {
-    return this.user$.switchMap(user => this.userService.get('1y5aSaIu1rZjrsTND6PzmrFQV6f2'));
+    return this.user$.switchMap(user => this.userService.get(user.uid));
     
   }
  
