@@ -21,6 +21,7 @@ import { AuthGuard } from './auth-guard.service';
 import { CheckOutComponent } from './check-out/check-out.component';
 import {UserService} from './user.service';
 import {AdminCheckService} from './admin-check.service';
+import { ProductFormComponent } from './admin/product-form/product-form.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import {AdminCheckService} from './admin-check.service';
     MyOrderComponent,
     ManageOrderComponent,
     ManageProductsComponent,
-    CheckOutComponent
+    CheckOutComponent,
+    ProductFormComponent
   ],
   imports: [
     BrowserModule,
@@ -46,7 +48,8 @@ import {AdminCheckService} from './admin-check.service';
       {path: 'my/order' , component: MyOrderComponent, canActivate: [AuthGuard] },
       {path: 'admin/order' , component: ManageOrderComponent, canActivate: [AuthGuard, AdminCheckService]  },
       {path: 'admin/Product' , component: ManageProductsComponent, canActivate: [AuthGuard, AdminCheckService]  },
-      {path: 'check-out' , component: CheckOutComponent, canActivate: [AuthGuard] }
+      {path: 'check-out' , component: CheckOutComponent, canActivate: [AuthGuard] },
+      {path: 'admin/Product/new' , component: ProductFormComponent, canActivate: [AuthGuard, AdminCheckService]  },
     ])
   ],
   providers: [AuthService, AuthGuard, UserService, AdminCheckService],
