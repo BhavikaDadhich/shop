@@ -21,7 +21,7 @@
           {{ appUser.name }}
         </a>
        
-          <div class="dropdown-menu" aria-labelledby="dropdownMenuLink" aria-labelledby="dropdown01" role="menu">
+          <div class="dropdown-menu show" aria-labelledby="dropdownMenuLink" aria-labelledby="dropdown01" role="menu">
             <a class="dropdown-item" routerLink="/my/order">My Orders</a>
             <ng-container *ngIf="appUser.isAdmin">
               <a class="dropdown-item" routerLink="/admin/order">Manage Orders</a>
